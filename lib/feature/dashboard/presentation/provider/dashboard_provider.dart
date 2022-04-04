@@ -31,7 +31,7 @@ class DashboardProvider extends BaseModel {
 
         _assets = recentAssets
             .where(
-              (element) => element.type == AssetType.video,
+              (element) => element.type == AssetType.image,
             )
             .toList();
       }

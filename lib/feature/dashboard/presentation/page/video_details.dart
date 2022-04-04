@@ -46,11 +46,11 @@ class _VideoScreenState extends State<VideoScreen> {
 
   Future<void> _initVideo() async {
     final video = await widget.videoFile;
-    _controller = VideoPlayerController.file(video!)
-      // Play the video again when it ends
-      // _controller = VideoPlayerController.network(
-      //   'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4',
-      // )
+    // _controller = VideoPlayerController.file(video!)
+    // Play the video again when it ends
+    _controller = VideoPlayerController.network(
+      'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4',
+    )
       ..setLooping(true)
       // initialize the controller and notify UI when done
       ..initialize().then((_) => setState(() => initialized = true));
@@ -188,7 +188,14 @@ class CommentWidget extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const CircleAvatar(),
+          CircleAvatar(
+            backgroundColor: AppColors.blueColor70,
+            child: TextBold(
+              'CY',
+              fontSize: 15,
+              color: Colors.white,
+            ),
+          ),
           gapSmall,
           Expanded(
             child: Column(
@@ -201,6 +208,7 @@ class CommentWidget extends StatelessWidget {
                 TextRegular(
                   'I really love everything you have done to explain this video to me I really Like ',
                   color: AppColors.blackColor70,
+                  fontSize: 10,
                 )
               ],
             ),

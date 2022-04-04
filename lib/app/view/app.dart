@@ -18,7 +18,7 @@ class App extends StatelessWidget {
       localizationsDelegates: const [
         GlobalMaterialLocalizations.delegate,
       ],
-      initialRoute: Routes.loginPage,
+      initialRoute: Routes.gallery,
     );
   }
 }
